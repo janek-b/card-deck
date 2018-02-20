@@ -22,6 +22,7 @@ public class Deck {
 
     // Shuffle
     public void shuffleDeck() {
+        generateDeck();
         Collections.shuffle(cards);
     }
 
