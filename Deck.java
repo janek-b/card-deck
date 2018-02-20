@@ -1,17 +1,19 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Deck {
-    private ArrayList cards;
+    private List<Card> cards = new ArrayList<Card>();
 
     public Deck() {
-        cards = new ArrayList<Card>();
         generateDeck();
     }
 
     // Generate Deck
     public void generateDeck() {
-        for (Value value : Card.Value) {
-            for (Suit suit : Card.Suit) {
+        cards.clear();
+        for (Card.Value value : Card.Value.values()) {
+            for (Card.Suit suit : Card.Suit.values()) {
                 Card newCard = new Card(value, suit);
                 cards.add(newCard);
             }
@@ -20,13 +22,13 @@ public class Deck {
 
     // Shuffle
     public void shuffleDeck() {
-        
+        Collections.shuffle(cards);
     }
 
     // Draw card
     public String drawCard() {
         if (cards.size() > 0) {
-            return cards.remove(cards.size()).toString();
+            return cards.remove(cards.size() - 1).toString();
         } else {
             return "There are no cards in the deck";
         }
