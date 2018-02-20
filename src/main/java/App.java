@@ -15,15 +15,15 @@ public class App {
         while (running) {
             String userInput = console.readLine();
 
-            if (userInput.equals("S")) {
+            if (userInput.toLowerCase().equals("s")) {
                 deck.shuffleDeck();
             }
 
-            if (userInput.equals("D")) {
+            if (userInput.toLowerCase().equals("d")) {
                 System.out.println(deck.drawCard());
             }
 
-            if (userInput.equals("E")) {
+            if (userInput.toLowerCase().equals("e")) {
                 running = false;
             }
             
