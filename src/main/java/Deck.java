@@ -25,8 +25,8 @@ public class Deck {
         Collections.shuffle(cards);
     }
 
-    // Draw card
-    public String drawCard() {
+    // This returns a string representation to avoid exception handling for the sake of simplicity
+    public String drawCard(){
         if (cards.size() > 0) {
             return cards.remove(cards.size() - 1).toString();
         } else {
